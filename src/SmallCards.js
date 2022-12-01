@@ -2,7 +2,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import MarkChatUnreadIcon from '@mui/icons-material/MarkChatUnread';
-import CustomizedProgressBars from './CustomizedProgressBars';
+import { CustomizedProgressBars } from './CustomizedProgressBars';
 
 export function SmallCards() {
 

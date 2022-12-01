@@ -45,6 +45,33 @@ body {
 
 }
 
+.line-chart-container,.doughnut-chart-container{
+  width:700px;
+  border:2px solid black;
+}
+
+/* projetcs */
+.projects-container{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: .5rem;
+  border: 2px solid green;
+}
+
+
+.project-container{
+ 
+  display: flex;
+  flex-direction: column; 
+  gap: .5rem;
+}
+.label-container{
+  display: flex;
+  justify-content: space-between;
+}
+
 /* mediaqueries */
 
 @media screen and (min-width: 768px) {
@@ -58,3 +85,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+
+
+

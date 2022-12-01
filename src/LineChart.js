@@ -25,6 +25,9 @@ ChartJS.register(
 
 function LineChart({ lineColor }) {
     const options = {
+        radius: 5,
+        hitRadius: 20,
+        hoverRadius: 10,
         responsive: true,
         plugins: {
             legend: {
@@ -34,22 +37,44 @@ function LineChart({ lineColor }) {
                 display: false,
                 text: "Chart.js Line Chart"
             }
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            },
+
+            y: {
+
+                min: 0,
+                max: 40000,
+                ticks: {
+                    stepSize: 10000,
+                    callback: (value) => "$ " + value
+                },
+
+                grid: {
+                    borderDash: [10]
+                }
+
+            }
         }
     };
 
     const labels = [
         "January",
-        "February",
+        "",
         "March",
-        "April",
+        "",
         "May",
-        "June",
+        "",
         "July",
-        "August",
+        "",
         "September",
-        "October",
+        "",
         "November",
-        "December"
+        ""
     ];
 
     const data = {
@@ -72,8 +97,11 @@ function LineChart({ lineColor }) {
                     35000
                 ],
                 borderColor: lineColor,
-                backgroundColor: "rgba(255, 99, 132, 0.5)",
-                lineTension: 0.2
+                backgroundColor: lineColor,
+                pointBorderColor: lineColor,
+                pointBackgroundColor: "red",
+                pointBorderWidth: 3,
+                tension: 0.2
             }
         ]
     };
