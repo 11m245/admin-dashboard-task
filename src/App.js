@@ -1,5 +1,6 @@
 import './App.css';
 import { SmallCards } from './SmallCards';
+import { LineChart } from "./LineChart";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function Dashboard() {
 
   return (<div>
     <SmallCards />
+    <LineChart lineColor="green" />
+    {/* <LineChart lineColor="var(--clr1)" /> */}
   </div>);
 }
 
