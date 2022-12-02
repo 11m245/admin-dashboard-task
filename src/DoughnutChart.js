@@ -1,6 +1,7 @@
 import React from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -28,9 +29,16 @@ function DoughnutChart() {
             }
         ]
     };
+    return (
+        <>
+            <div className="card-head-container">
+                <h3 className="card-head">Revenue Sources</h3>
+                <MoreVertIcon></MoreVertIcon>
+            </div>
+            <Doughnut data={data} />
+        </>);
 
 
-    return <Doughnut data={data} />;
 }
 
 export { DoughnutChart }

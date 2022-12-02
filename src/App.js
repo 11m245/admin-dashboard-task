@@ -2,7 +2,9 @@ import './App.css';
 import { SmallCards } from './SmallCards';
 import { LineChart } from "./LineChart";
 import { DoughnutChart } from "./DoughnutChart";
-import { CustomizedProgressBars } from "./CustomizedProgressBars"
+import { CustomizedProgressBars } from "./CustomizedProgressBars";
+
+
 
 function App() {
   return (
@@ -18,12 +20,19 @@ function Dashboard() {
 
   console.log(color);
   return (<div>
+    <h1 className='heading'>Dashboard</h1>
     <SmallCards />
-    <div className="line-chart-container"><LineChart lineColor="green" /></div>
-    {/* <LineChart lineColor="var(--clr1)" /> */}
-    <div className="doughnut-chart-container"><DoughnutChart /></div>
+    <div className="section-2">
+      <div className="line-chart-container"><LineChart lineColor="green" /></div>
+      {/* <LineChart lineColor=`${var(--clr1)}` /> */}
+      <div className="doughnut-chart-container"><DoughnutChart /></div>
+    </div>
 
     <div className="projects-container">
+      <div className="card-head-container">
+        <h3 className="card-head">Revenue Sources</h3>
+        {/* <MoreVertIcon></MoreVertIcon> */}
+      </div>
       {projectsList.map((data) => <ProjectBar data={data} />)}
     </div>
 
@@ -31,6 +40,8 @@ function Dashboard() {
 
   </div>);
 }
+
+
 
 function ProjectBar({ data }) {
   // const data = { label: "Server Migration", percent: 20, barColor: "red" };
@@ -45,6 +56,8 @@ function ProjectBar({ data }) {
   );
 
 }
+
+
 
 
 export default App;

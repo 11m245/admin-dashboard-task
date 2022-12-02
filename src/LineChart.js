@@ -10,6 +10,7 @@ import {
     Legend
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 ChartJS.register(
     CategoryScale,
@@ -107,7 +108,14 @@ function LineChart({ lineColor }) {
     };
 
 
-    return <Line options={options} data={data} />;
+    return (
+        <>
+            <div className="card-head-container">
+                <h3 className="card-head">Earnings Overview</h3>
+                <MoreVertIcon></MoreVertIcon>
+            </div>
+            <Line options={options} data={data} />
+        </>);
 }
 
 
