@@ -10,6 +10,7 @@ import {
     Legend
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 ChartJS.register(
     CategoryScale,
@@ -21,13 +22,11 @@ ChartJS.register(
     Legend
 );
 
-
-
 function LineChart({ lineColor }) {
     const options = {
         radius: 5,
         hitRadius: 20,
-        hoverRadius: 10,
+        hoverRadius: 15,
         responsive: true,
         plugins: {
             legend: {
@@ -99,15 +98,23 @@ function LineChart({ lineColor }) {
                 borderColor: lineColor,
                 backgroundColor: lineColor,
                 pointBorderColor: lineColor,
-                pointBackgroundColor: "red",
+                pointBackgroundColor: lineColor,
                 pointBorderWidth: 3,
                 tension: 0.2
             }
         ]
     };
 
-
-    return <Line options={options} data={data} />;
+    return (
+        <>
+            <div className="card-head-container">
+                <h3 className="card-head">Earnings Overview</h3>
+                <MoreVertIcon fontSize="small" sx={{ color: "hsl(233deg 7% 55%)" }} ></MoreVertIcon>
+            </div>
+            <div className="card-body">
+                <Line options={options} data={data} />
+            </div>
+        </>);
 }
 
 

@@ -18,7 +18,7 @@ export function SmallCards() {
 
 }
 function SmallCard({ data }) {
-    return (<div style={{ borderLeft: `5px solid ${data.labelColor}` }} className="small-card-container">
+    return (<div style={{ borderLeft: `5px solid ${data.labelColor}` }} className="small-card-container shadow">
         <div>
             <p style={{ color: data.labelColor }} className='small-card-label'> {data.label}</p>
             <div className="number-container">
