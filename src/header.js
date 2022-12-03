@@ -188,59 +188,50 @@ export default function PrimarySearchAppBar() {
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-<<<<<<< HEAD
                             <Badge badgeContent={8} color="error">
-=======
-                            <Badge badgeContent={4} color="error">
->>>>>>> 18f76793822c52f8a8e80295347d82bcda49d31a
-            <MailIcon />
-        </Badge>
-    </IconButton>
-        <IconButton
-            size="large"
-            aria-label="show 17 new notifications"
-            color="inherit"
-        >
-<<<<<<< HEAD
+                                <MailIcon />
+                            </Badge>
+                        </IconButton>
+                        <IconButton
+                            size="large"
+                            aria-label="show 17 new notifications"
+                            color="inherit"
+                        >
                             <Badge badgeContent={7} color="error">
-=======
-                            <Badge badgeContent={17} color="error">
->>>>>>> 18f76793822c52f8a8e80295347d82bcda49d31a
-            <NotificationsIcon />
-        </Badge>
-    </IconButton>
-        <IconButton
-            size="large"
-            edge="end"
-            aria-label="account of current user"
-            aria-controls={menuId}
-            aria-haspopup="true"
-            onClick={handleProfileMenuOpen}
-            color="inherit"
-        >
-            <AccountCircle />
-        </IconButton>
+                                <NotificationsIcon />
+                            </Badge>
+                        </IconButton>
+                        <IconButton
+                            size="large"
+                            edge="end"
+                            aria-label="account of current user"
+                            aria-controls={menuId}
+                            aria-haspopup="true"
+                            onClick={handleProfileMenuOpen}
+                            color="inherit"
+                        >
+                            <AccountCircle />
+                        </IconButton>
                     </Box >
-        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-                size="large"
-                aria-label="show more"
-                aria-controls={mobileMenuId}
-                aria-haspopup="true"
-                onClick={handleMobileMenuOpen}
-                color="inherit"
-            >
-                <MoreIcon />
-            </IconButton>
-        </Box>
+                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                        <IconButton
+                            size="large"
+                            aria-label="show more"
+                            aria-controls={mobileMenuId}
+                            aria-haspopup="true"
+                            onClick={handleMobileMenuOpen}
+                            color="inherit"
+                        >
+                            <MoreIcon />
+                        </IconButton>
+                    </Box>
                 </Toolbar >
             </AppBar >
-        { renderMobileMenu }
-    { renderMenu }
+            {renderMobileMenu}
+            {renderMenu}
         </Box >
     );
 }
-<<<<<<< HEAD
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -280,5 +271,3 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         },
     },
 }));
-=======
->>>>>>> 18f76793822c52f8a8e80295347d82bcda49d31a
