@@ -8,11 +8,29 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 function DoughnutChart() {
 
+    //refer https://www.chartjs.org/docs/latest/configuration/legend.html
+
+    const options = {
+
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    usePointStyle: true,
+                    pointStyle: 'circle'
+                },
+                display: true,
+                title: {
+                    padding: 0
+                }
+            }
+        }
+    };
     const data = {
         labels: ["Direct", "Social", " Referral"],
         datasets: [
             {
-                label: "# of Votes",
+                label: "Revenue Resources",
                 data: [55, 15, 30],
                 backgroundColor: [
                     "hsl(225deg 69% 59%)",
@@ -24,6 +42,7 @@ function DoughnutChart() {
                     "#fff",
                     "#fff"
                 ],
+                spacing: 5,
                 borderWidth: 1,
                 cutout: "83%"
             }
@@ -33,9 +52,11 @@ function DoughnutChart() {
         <>
             <div className="card-head-container">
                 <h3 className="card-head">Revenue Sources</h3>
-                <MoreVertIcon></MoreVertIcon>
+                <MoreVertIcon fontSize="small" sx={{ color: "hsl(233deg 7% 55%)" }} ></MoreVertIcon>
             </div>
-            <Doughnut data={data} />
+            <div className="card-body">
+                <Doughnut data={data} options={options} />
+            </div>
         </>);
 
 

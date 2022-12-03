@@ -22,13 +22,11 @@ ChartJS.register(
     Legend
 );
 
-
-
 function LineChart({ lineColor }) {
     const options = {
         radius: 5,
         hitRadius: 20,
-        hoverRadius: 10,
+        hoverRadius: 15,
         responsive: true,
         plugins: {
             legend: {
@@ -100,21 +98,22 @@ function LineChart({ lineColor }) {
                 borderColor: lineColor,
                 backgroundColor: lineColor,
                 pointBorderColor: lineColor,
-                pointBackgroundColor: "red",
+                pointBackgroundColor: lineColor,
                 pointBorderWidth: 3,
                 tension: 0.2
             }
         ]
     };
 
-
     return (
         <>
             <div className="card-head-container">
                 <h3 className="card-head">Earnings Overview</h3>
-                <MoreVertIcon></MoreVertIcon>
+                <MoreVertIcon fontSize="small" sx={{ color: "hsl(233deg 7% 55%)" }} ></MoreVertIcon>
             </div>
-            <Line options={options} data={data} />
+            <div className="card-body">
+                <Line options={options} data={data} />
+            </div>
         </>);
 }
 
