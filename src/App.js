@@ -35,16 +35,12 @@ function Dashboard() {
       <h1 className='heading'>Dashboard</h1>
       <SmallCards />
       <div className="section-2">
-        <div className="line-chart-container card-container shadow">
-          <LineChart lineColor="hsl(225deg 69% 59%)" />
-        </div>
+
         <div className="line-chart-container card-container shadow">
           <LineChart lineColor="hsl(225deg 69% 59%)" />
         </div>
         {/* <LineChart lineColor=`${var(--clr1)}` /> */}
-        <div className="doughnut-chart-container card-container shadow">
-          <DoughnutChart />
-        </div>
+
         <div className="doughnut-chart-container card-container shadow">
           <DoughnutChart />
         </div>
