@@ -7,17 +7,12 @@ import { ColorCards } from './ColorCards';
 import { CardwithPic } from './CardwithPic';
 import { CardOnly } from './CardOnly';
 import PrimarySearchAppBar from './header.js';
-import { ProjectBars } from './ProjectBars';
-import { ColorCards } from './ColorCards';
-import { CardwithPic } from './CardwithPic';
-import { CardOnly } from './CardOnly';
-import PrimarySearchAppBar from './header.js';
+
 
 
 function App() {
   return (
     <div className="App">
-      <PrimarySearchAppBar />
       <PrimarySearchAppBar />
       <Dashboard />
     </div>
