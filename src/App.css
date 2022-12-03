@@ -52,7 +52,7 @@ body {
 
 .small-cards-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat( 1, 1fr) ;
   gap: 2rem;  
   gap: 2rem;  
 }
@@ -80,9 +80,9 @@ margin-bottom: 3rem;
 
 }
 
-.small-card-number{
-  min-width: 300px;    
-}
+/* .small-card-number{
+  min-width: 150px;    
+} */
 
 .doughnut-chart-container>.card-body{
 width: 70%;
