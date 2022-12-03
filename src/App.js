@@ -2,7 +2,12 @@ import './App.css';
 import { SmallCards } from './SmallCards';
 import { LineChart } from "./LineChart";
 import { DoughnutChart } from "./DoughnutChart";
-import { CustomizedProgressBars } from "./CustomizedProgressBars"
+import { ProjectBars } from './ProjectBars';
+import { ColorCards } from './ColorCards';
+import { CardwithPic } from './CardwithPic';
+import { CardOnly } from './CardOnly';
+import PrimarySearchAppBar from './header.js';
+
 
 function App() {
   return (
@@ -23,44 +28,40 @@ function Dashboard() {
     linkUrl: `https://undraw.co/`
   }
 
-  return (
-    <div>
-      <SmallCards />
-      <div className="line-chart-container"><LineChart lineColor="green" /></div>
-      {/* <LineChart lineColor="var(--clr1)" /> */}
-      <div className="doughnut-chart-container"><DoughnutChart /></div>
+  return (<div>
 
-      <div className="projects-container">
-        {projectsList.map((data) => <ProjectBar data={data} />)}
+    <h1 className='heading'>Dashboard</h1>
+    <SmallCards />
+    <div className="section-2">
+      <div className="line-chart-container card-container shadow">
+        <LineChart lineColor="hsl(225deg 69% 59%)" />
       </div>
-      <div className="section-3">
-        <div className="projects-container card-container shadow">
-          <ProjectBars />
-        </div>
-
-        <div className="color-cards-container card-container shadow">
-          <ColorCards />
-        </div>
-
-        <div className="card-with-pic illustrations-card card-container shadow">
-          <CardwithPic data={cardData} />
-        </div>
-
-      </div>
-    </div>);
-}
-
-function ProjectBar({ data }) {
-
-  return (
-    <div className="project-container">
-      <div className="label-container">
-        <h4>{data.label}</h4>
-        <h4>{data.percent === 100 ? "Complete" : `${data.percent}%`}</h4>
+      {/* <LineChart lineColor=`${var(--clr1)}` /> */}
+      <div className="doughnut-chart-container card-container shadow">
+        <DoughnutChart />
       </div>
     </div>
-  );
+    <div className="section-3">
+      <div className="projects-container card-container shadow">
+        <ProjectBars />
+      </div>
+
+      <div className="color-cards-container card-container shadow">
+        <ColorCards />
+      </div>
+
+      <div className="card-with-pic illustrations-card card-container shadow">
+        <CardwithPic data={cardData} />
+      </div>
+
+      <div className="card-only illustrations-card card-container shadow">
+        <CardOnly />
+      </div>
+    </div>
+
+  </div>);
 }
+
 
 
 export default App;
