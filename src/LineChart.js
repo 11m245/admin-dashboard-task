@@ -26,7 +26,7 @@ function LineChart({ lineColor }) {
     const options = {
         radius: 5,
         hitRadius: 20,
-        hoverRadius: 15,
+        hoverRadius: 10,
         responsive: true,
         plugins: {
             legend: {

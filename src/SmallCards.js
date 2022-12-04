@@ -27,7 +27,7 @@ function SmallCard({ data }) {
                     {data.type === "count" ? `${data.number}` : null}
                     {data.type === "percent" ? `${data.number}% ` : null}
                 </h3>
-                {data.type === "percent" ? <CustomizedProgressBars barColor={data.labelColor} value={data.number} /> : null}
+                {data.type === "percent" ? <CustomizedProgressBars height={7} barColor={data.labelColor} value={data.number} /> : null}
             </div>
         </div>
         {data.icon}

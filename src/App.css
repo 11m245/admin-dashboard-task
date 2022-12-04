@@ -5,7 +5,7 @@
 
 body {
   background-color: hsl(225deg 13% 94%);
-  padding-inline: 1rem;
+ 
 }
 
 :root {
@@ -15,9 +15,13 @@ body {
   --clr4: hsl(43deg 91% 60%);
   --dull-clr: hsl(231deg 26% 89%);
   --text-b-clr: hsl(233deg 7% 55%);
+  --text-b-clr: hsl(233deg 7% 55%);
   --bg-white: hsl(0deg 0% 100%);
 }
 
+.dashboard-container{
+  padding-inline: 1rem;
+}
 .heading {
   color: var(--text-b-clr);
   font-weight: 400;
@@ -28,6 +32,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1.5rem 1rem;  
   padding: 1.5rem 1rem;  
   border-radius: 0.5rem;
   background-color: var(--bg-white);
@@ -41,10 +46,14 @@ body {
 .card-container{
   max-height: min-content;
 }
+.card-container{
+  max-height: min-content;
+}
 
 .small-cards-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat( 1, 1fr) ;
+  gap: 2rem;  
   gap: 2rem;  
 }
 
@@ -71,10 +80,33 @@ margin-bottom: 3rem;
 
 }
 
+/* .small-card-number{
+  min-width: 150px;    
+} */
+
+.doughnut-chart-container>.card-body{
+width: 70%;
+margin-inline: auto;
+margin-block: 2rem !important;
+margin-bottom: 3rem;
+
+}
+
+.card-body{
+  padding: 2rem;
+}
+
+.shadow {
+  box-shadow:0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+
+}
+
 .card-head-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #cfd6ec;
+ padding-inline: 0.7rem;
   border-bottom: 1px solid #cfd6ec;
  padding-inline: 0.7rem;
 }
@@ -91,6 +123,7 @@ margin-bottom: 3rem;
   flex-direction: column;
   gap: 0.5rem;
   /* border: 2px solid green; */
+  /* border: 2px solid green; */
 }
 
 .project-container {
@@ -98,6 +131,17 @@ margin-bottom: 3rem;
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.bar-container{
+margin-bottom: 0.5rem;
+}
+
+.bar-label,.bar-percent{
+  color: var(--text-b-clr);
+  font-size: 80%;
+  font-weight: 600;
+}
+
 
 .bar-container{
 margin-bottom: 0.5rem;
@@ -133,9 +177,7 @@ gap: 1.2rem;
 }
 
 /* cardwithpic */
-.illustrations-card{
-  
-}
+
 
 .illustrations-card img{ 
   margin: 3% 10%;
@@ -151,6 +193,10 @@ gap: 1.2rem;
   text-decoration: none; 
 }
 
+.small-card-number{
+     width: 200px!important;
+}
+
 
 /* mediaqueries */
 
@@ -158,6 +204,22 @@ gap: 1.2rem;
   .small-cards-container {
     grid-template-columns: 1fr 1fr;
   }
+}
+@media screen and (min-width: 900px) {
+  .section-2 {
+    grid-template-columns: 60% 39%;
+  }
+  .section-3 {
+    grid-template-columns: 50% 50%;
+  }
+
+  .card-with-pic{
+    grid-column: 2/3;
+    grid-row-start:1;  
+     
+  }
+ 
+
 }
 @media screen and (min-width: 900px) {
   .section-2 {
