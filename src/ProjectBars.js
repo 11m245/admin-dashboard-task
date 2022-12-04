@@ -1,7 +1,7 @@
 import { CustomizedProgressBars } from "./CustomizedProgressBars";
 
 function ProjectBars() {
-    const projectsList = [{ label: "Server Migration", percent: 20, barColor: `red` }, { label: "Sales Tracking", percent: 40, barColor: `var(--clr4)` }, { label: "Customer Database", percent: 60, barColor: `var(--clr1)` }, { label: "Payout Details", percent: 80, barColor: `var(--clr3)` }, { label: "Account Setup", percent: 100, barColor: `var(--clr2)` }];
+    const projectsList = [{ label: "Server Migration", percent: 20, barColor: `var(--clr-danger)` }, { label: "Sales Tracking", percent: 40, barColor: `var(--clr-warning)` }, { label: "Customer Database", percent: 60, barColor: `var(--clr-primary)` }, { label: "Payout Details", percent: 80, barColor: `var(--clr-info)` }, { label: "Account Setup", percent: 100, barColor: `var(--clr-success)` }];
     return (<> <div className="card-head-container">
         <h3 className="card-head">Projects</h3>
         {/* <MoreVertIcon></MoreVertIcon> */}
@@ -22,7 +22,6 @@ function ProjectBar({ data }) {
             </div>
             <div className="bar-container">
                 <CustomizedProgressBars barColor={data.barColor} value={data.percent} />
-
             </div>
         </div >
     );
