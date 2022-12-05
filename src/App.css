@@ -4,8 +4,7 @@
 }
 
 body {
-  background-color: hsl(225deg 13% 94%);
- 
+  background-color: hsl(225deg 13% 94%); 
 }
 
 :root {
@@ -19,11 +18,50 @@ body {
  --clr-dark:hsl(210deg 10% 23%);
  --clr-white:hsl(0deg 0% 100%);
   --dull-clr: hsl(231deg 26% 89%);
-  
- 
-  --bg-white: hsl(0deg 0% 100%);
+   --bg-white: hsl(0deg 0% 100%);
 }
 
+.body-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.side-menu-container{  
+  background-color: var(--clr-primary);
+}
+.side-bar-heading{
+  color: rgba(255,255,255,.4);
+  text-align: center;
+  padding: 0 1rem;
+  font-weight: 800;
+  font-size: .65rem;
+  text-transform: uppercase;
+  margin-block: 0.3rem;
+}
+
+.nav-link{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: rgba(255,255,255,.6);
+  padding: 1rem;
+  /* border: 1px solid red; */
+}
+.nav-link:hover{
+   color: rgba(255,255,255); 
+  /* border: 1px solid red; */
+}
+.nav-link:active{
+  color: rgba(255,255,255); 
+ /* border: 1px solid red; */
+}
+.hr-divider{
+  margin: .3rem ;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
 .dashboard-container{
   padding-inline: 1rem;
 }
@@ -45,8 +83,7 @@ body {
 
 .small-card-label {
   font-size: 0.7rem;
-  font-weight: 700;
-  
+  font-weight: 700;  
 }
 
 .card-container{
