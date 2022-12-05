@@ -113,8 +113,76 @@ export default function PrimarySearchAppBar() {
         </MenuItem>
     </Menu>);
 
+    const renderDropDownMail = (
+        <div className="drop-down-card-menu" style={{ position: "absolute", top: "70px", right: "0" }}>
+            <h4 className="drop-down-card-header">Message Center</h4>
+            <a onClick={() => setShowMail(!showMail)} class="drop-down-card-item" href="#">
+                <div class="drop-down-card-item-image-w">
+                    <img class="drop-down-card-item-image" src="https://picsum.photos/id/1/200/300" alt="..." />
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="drop-down-card-item-content">
+                    <div class=" drop-down-card-item-title text-truncate">Hi there! I am wondering if you can help me with a
+                        problem I've been having.
+                    </div>
+                    <div class="drop-down-card-item-sub-title">Emily Fowler · 58m
+                    </div>
+                </div>
+            </a>
+            <div className="drop-down-card-item-divider"></div>
 
-    const [showDrop, setShowDrop] = useState(true);
+            <a onClick={() => setShowMail(!showMail)} class="drop-down-card-item" href="#">
+                <div class="drop-down-card-item-image-w">
+                    <img class="drop-down-card-item-image" src="https://picsum.photos/id/1/200/300" alt="..." />
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="drop-down-card-item-content">
+                    <div class=" drop-down-card-item-title text-truncate">Hi there! I am wondering if you can help me with a
+                        problem I've been having.
+                    </div>
+                    <div class="drop-down-card-item-sub-title">Emily Fowler · 58m
+                    </div>
+                </div>
+            </a>
+
+        </div >);
+
+    const renderDropDownAlerts = (
+        <div className="drop-down-card-menu" style={{ position: "absolute", top: "70px", right: "0" }}>
+            <h4 className="drop-down-card-header">Alerts Center</h4>
+            <a onClick={() => setShowAlerts(!showAlerts)} class="drop-down-card-item" href="#">
+                <div class="drop-down-card-item-image-w">
+                    <img class="drop-down-card-item-image" src="https://picsum.photos/id/1/200/300" alt="..." />
+
+                </div>
+                <div class="drop-down-card-item-content">
+                    <div class=" drop-down-card-item-title text-truncate">Hi there! I am wondering if you can help me with a
+                        problem I've been having.
+                    </div>
+                    <div class="drop-down-card-item-sub-title">Emily Fowler · 58m
+                    </div>
+                </div>
+            </a>
+            <div className="drop-down-card-item-divider"></div>
+
+            <a onClick={() => setShowAlerts(!showAlerts)} class="drop-down-card-item" href="#">
+                <div class="drop-down-card-item-image-w">
+                    <img class="drop-down-card-item-image" src="https://picsum.photos/id/1/200/300" alt="..." />
+
+                </div>
+                <div class="drop-down-card-item-content">
+                    <div class=" drop-down-card-item-title text-truncate">Hi there! I am wondering if you can help me with a
+                        problem I've been having.
+                    </div>
+                    <div class="drop-down-card-item-sub-title">Emily Fowler · 58m
+                    </div>
+                </div>
+            </a>
+
+        </div >);
+
+    const [showMail, setShowMail] = useState(false);
+    const [showAlerts, setShowAlerts] = useState(false);
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -147,17 +215,17 @@ export default function PrimarySearchAppBar() {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton onClick={() => setShowDrop(!showDrop)} size="large" aria-label="show 4 new mails" color="inherit">
+                        <IconButton onClick={() => setShowMail(!showMail)} size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={8} color="error">
                                 <MailIcon />
                             </Badge>
                         </IconButton>
-                        <IconButton
+                        <IconButton onClick={() => setShowAlerts(!showAlerts)}
                             size="large"
                             aria-label="show 17 new notifications"
                             color="inherit"
                         >
-                            <Badge badgeContent={7} color="error">
+                            <Badge badgeContent={17} color="error">
                                 <NotificationsIcon />
                             </Badge>
                         </IconButton>
@@ -189,7 +257,8 @@ export default function PrimarySearchAppBar() {
             </AppBar >
             {renderMobileMenu}
             {renderMenu}
-            {showDrop ? renderMobileMenu : null}
+            {showMail ? renderDropDownMail : null}
+            {showAlerts ? renderDropDownAlerts : null}
         </Box >
     );
 }

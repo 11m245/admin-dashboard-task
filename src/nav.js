@@ -67,6 +67,14 @@ export default function PrimarySearchAppBar() {
             <MenuItem>My account</MenuItem>
         </Menu>
     );
+    const renderDropDownMenu = (
+        <div className="drop-down-menu" style={{ position: "absolute", top: "30px", right: "0" }}>
+            <h3 className="drop-down-header">Dropdown Header</h3>
+            <a href="#" onClick={() => setShowMenu(!showMenu)} className="drop-down-item"> option1</a>
+            <a href="#" onClick={() => setShowMenu(!showMenu)} className="drop-down-item">option2</a>
+            <div className="drop-down-divider"></div>
+            <a href="#" onClick={() => setShowMenu(!showMenu)} className="drop-down-item">option3</a>
+        </div >);
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
@@ -174,17 +182,13 @@ export default function PrimarySearchAppBar() {
                             aria-controls={mobileMenuId}
                             aria-haspopup="true"
                             color="inherit"
-                            onClick={() => {
-                                setShowMobileMoreMenu(!showMobileMoreMenu);
-
-                            }}
                         >
                             <MoreIcon />
                         </IconButton>
                     </Box>
                 </Toolbar>
             </AppBar>
-            {showMobileMoreMenu ? renderMobileMenu : null}
+            {showMenu ? renderDropDownMenu : null}
             {renderMenu}
         </Box>
     );
