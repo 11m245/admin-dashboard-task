@@ -8,7 +8,7 @@ body {
 }
 
 :root {
-  --clr-primary: hsl(225deg 69% 59%); 
+  --clr-primary: hsl(210deg 79% 46%); 
   --clr-secondary: hsl(233deg 7% 55%);
   --clr-success: hsl(158deg 75% 45%);
   --clr-danger:hsl(354deg 70% 54%);
