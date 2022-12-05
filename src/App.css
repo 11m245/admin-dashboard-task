@@ -25,7 +25,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .side-menu-container{  
@@ -67,7 +67,7 @@ body {
 /* dashboard */
 .dashboard-container{
   padding-inline: 1rem;
-  border: 2px solid green;
+  /* border: 2px solid green; */
  
 }
 .heading {
