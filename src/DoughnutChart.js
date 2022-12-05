@@ -51,7 +51,7 @@ function DoughnutChart() {
         ]
     };
 
-    const renderDropDownMenu = (<div className="drop-down-menu" style={{ position: "absolute", top: "30px", right: "0" }}>
+    const renderDropDownMenu = (<div onBlur={() => { console.log("onblur"); setShowMenu(!showMenu) }} className="drop-down-menu" style={{ position: "absolute", top: "30px", right: "0" }}>
         <h3 className="drop-down-header">Dropdown Header</h3>
         <a href="#" onClick={() => setShowMenu(!showMenu)} className="drop-down-item"> option1</a>
         <a href="#" onClick={() => setShowMenu(!showMenu)} className="drop-down-item">option2</a>
@@ -64,7 +64,7 @@ function DoughnutChart() {
         <>
             <div className="card-head-container" style={{ position: "relative " }}>
                 <h3 className="card-head">Revenue Sources</h3>
-                <button className="drop-down-menu-icon" href="#"><MoreVertIcon onClick={() => setShowMenu(!showMenu)} fontSize="small" sx={{ color: "hsl(233deg 7% 55%)" }} ></MoreVertIcon></button>
+                <button className="drop-down-menu-icon" href="#"><MoreVertIcon onClick={() => { console.log("onclick"); setShowMenu(!showMenu) }} onBlur={() => { console.log("onblur"); setShowMenu(!showMenu) }} fontSize="small" sx={{ color: "hsl(233deg 7% 55%)" }} ></MoreVertIcon></button>
                 {showMenu ? renderDropDownMenu : null}
             </div>
             <div className="card-body">
