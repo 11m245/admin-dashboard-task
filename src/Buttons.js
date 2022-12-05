@@ -64,23 +64,23 @@ function ButtonsCard() {
                 Split Button Primary
             </Button>
             <Button sx={{ backgroundColor: `var(--clr-success)` }} variant="contained" startIcon={<CheckIcon />}>
-                Split Button Primary
+                Split Button Success
             </Button>
 
             <Button sx={{ backgroundColor: `var(--clr-info)` }} variant="contained" startIcon={<InfoRoundedIcon />}>
-                Split Button Primary
+                Split Button Info
             </Button>
             <Button sx={{ backgroundColor: `var(--clr-warning)` }} variant="contained" startIcon={<ErrorRoundedIcon />}>
-                Split Button Primary
+                Split Button Warning
             </Button>
             <Button sx={{ backgroundColor: `var(--clr-danger)` }} variant="contained" startIcon={<DeleteRoundedIcon />}>
-                Split Button Primary
+                Split Button Danger
             </Button>
             <Button sx={{ backgroundColor: `var(--clr-secondary)` }} variant="contained" startIcon={<SendIcon />}>
-                Split Button Primary
+                Split Button Secondary
             </Button>
-            <Button sx={{ backgroundColor: `var(--clr-light), color:"black" ` }} variant="contained" startIcon={<SendIcon sx={{ color: "black" }} />}>
-                Split Button Primary
+            <Button sx={{ backgroundColor: `var(--clr-light), color:"red" ` }} variant="contained" startIcon={<SendIcon sx={{ color: "black" }} />}>
+                Split Button Light
             </Button>
         </div>);
 
