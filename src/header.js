@@ -15,7 +15,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-
+import { useState } from "react";
 
 export default function PrimarySearchAppBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -113,6 +113,8 @@ export default function PrimarySearchAppBar() {
         </MenuItem>
     </Menu>);
 
+
+    const [showDrop, setShowDrop] = useState(true);
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -145,7 +147,7 @@ export default function PrimarySearchAppBar() {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                        <IconButton onClick={() => setShowDrop(!showDrop)} size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={8} color="error">
                                 <MailIcon />
                             </Badge>
@@ -187,6 +189,7 @@ export default function PrimarySearchAppBar() {
             </AppBar >
             {renderMobileMenu}
             {renderMenu}
+            {showDrop ? renderMobileMenu : null}
         </Box >
     );
 }
