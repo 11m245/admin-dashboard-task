@@ -13,7 +13,7 @@ function App() {
         <Sidemenu />
         <div className="body-content">
           <Dashboard />
-          <Buttons />
+          {/* <Buttons /> */}
         </div>
       </div>
     </div>
