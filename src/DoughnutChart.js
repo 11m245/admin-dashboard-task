@@ -64,7 +64,7 @@ function DoughnutChart() {
         <>
             <div className="card-head-container" style={{ position: "relative " }}>
                 <h3 className="card-head">Revenue Sources</h3>
-                <button className="drop-down-menu-icon" href="#"><MoreVertIcon onClick={() => { console.log("onclick"); setShowMenu(!showMenu) }} onBlur={() => { console.log("onblur"); setShowMenu(!showMenu) }} fontSize="small" sx={{ color: "hsl(233deg 7% 55%)" }} ></MoreVertIcon></button>
+                <button onBlur={() => setShowMenu(false)} className="drop-down-menu-icon" href="#"><MoreVertIcon onClick={() => { console.log("onclick"); setShowMenu(!showMenu) }} onBlur={() => { console.log("onblur"); setShowMenu(!showMenu) }} fontSize="small" sx={{ color: "hsl(233deg 7% 55%)" }} ></MoreVertIcon></button>
                 {showMenu ? renderDropDownMenu : null}
             </div>
             <div className="card-body">
