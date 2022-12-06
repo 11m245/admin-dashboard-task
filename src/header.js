@@ -17,7 +17,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { useState } from "react";
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar({ isMobile, setIsMobile }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -193,6 +193,7 @@ export default function PrimarySearchAppBar() {
                         color="inherit"
                         aria-label="open drawer"
                         sx={{ mr: 2 }}
+                        onClick={() => setIsMobile(!isMobile)}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -215,12 +216,12 @@ export default function PrimarySearchAppBar() {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton onClick={() => setShowMail(!showMail)} size="large" aria-label="show 4 new mails" color="inherit">
+                        <IconButton onClick={() => setShowMail(!showMail)} onBlur={() => setShowMail(false)} size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={8} color="error">
                                 <MailIcon />
                             </Badge>
                         </IconButton>
-                        <IconButton onClick={() => setShowAlerts(!showAlerts)}
+                        <IconButton onClick={() => setShowAlerts(!showAlerts)} onBlur={() => setShowAlerts(false)}
                             size="large"
                             aria-label="show 17 new notifications"
                             color="inherit"

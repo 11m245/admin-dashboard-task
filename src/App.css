@@ -28,8 +28,10 @@ body {
   /* border: 2px solid red; */
 }
 
+
 .side-menu-container{  
   background-color: var(--clr-primary);
+  transition:all 2s ease;  
 }
 .side-bar-heading{
   color: rgba(255,255,255,.4);
@@ -50,6 +52,7 @@ body {
   color: rgba(255,255,255,.6);
   padding: 1rem;
   /* border: 1px solid red; */
+  transition:all 0.5s ease;  
 }
 .nav-link:hover{
    color: rgba(255,255,255); 
