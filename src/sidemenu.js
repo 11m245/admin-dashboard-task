@@ -9,6 +9,7 @@ function Sidemenu({ isMobile }) {
             <div className="side-bar-heading">interface</div>
             <SideBarMenu subMenu={{ isSubMenu: true, menus: { head: "Custom Components", list: ["Buttons", "Cards"] } }}
                 path="/Buttons" isMobile={isMobile} logo_name="fas fa-fw fa-cog" option_name="Components" />
+            <SideBarMenu subMenu={{ isSubMenu: false }} path="/Cards" isMobile={isMobile} logo_name="fa-solid fa-address-card" option_name="Cards" />
             <SideBarMenu subMenu={{ isSubMenu: true, menus: { head: "hhhhhh", list: ["option1", "option2"] } }}
                 path="/Utilities" isMobile={isMobile} logo_name=" fas fa-fw fa-wrench" option_name="Utilities" />
 
@@ -46,7 +47,7 @@ function SideBarMenu({ isMobile, logo_name, option_name, path, subMenu }) {
     };
     return (<div style={{ position: "relative" }} onClick={() => setShowSubMenu(!showSubMenu)} className="nav-side-item">
         <Link to={path} style={isMobile ? mobileStyle : pcStyle}>
-            <div style={isMobile ? { flexDirection: "column" } : { flexDirection: "row" }} className="nav-link">
+            <div style={isMobile ? { flexDirection: "column" } : { flexDirection: "row" }} className="nav-links">
                 <i className={logo_name}></i>
                 <span>{option_name}</span>
             </div>
