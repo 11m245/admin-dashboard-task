@@ -1,9 +1,11 @@
 import './App.css';
+import { NotFound } from './NotFound'
 import PrimarySearchAppBar from './header.js';
 import { Dashboard } from './Dashboard';
 import { Buttons } from './Buttons';
 import { Sidemenu } from './sidemenu';
 import { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
   };
   const pcStyle = {
     display: "grid",
-    gridTemplateColumns: "150px auto"
+    gridTemplateColumns: "200px auto"
   };
 
 
@@ -34,7 +36,8 @@ function App() {
 
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize)
+    window.addEventListener("resize", handleResize);
+    // console.log("exec");
   })
 
 
@@ -45,7 +48,12 @@ function App() {
       <div className="body-container" style={isMobile ? mobileStyle : pcStyle}>
         <Sidemenu isMobile={isMobile} />
         <div className="body-content">
-          <Dashboard />
+          <Routes>
+            <Route path={"/"} element={<Dashboard />} />
+            <Route path={"/Buttons"} element={<Buttons />} />
+            <Route path={"*"} element={<NotFound />} />
+          </Routes>
+
           {/* <Buttons /> */}
         </div>
       </div>
